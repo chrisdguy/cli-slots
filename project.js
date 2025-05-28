@@ -17,13 +17,19 @@ const prompt = require("prompt-sync")();
 const deposit = () => {
     while (true) {
         const depositAmount = prompt("How much would you like to deposit? ");
-        const numDepositeAmount = parseFloat(depositAmount);
-        if (isNaN(numDepositeAmount) || numDepositeAmount <= 0) {
+        const numDepositAmount = parseFloat(depositAmount);
+        if (isNaN(numDepositAmount) || numDepositAmount <= 0) {
             console.log("Invalid deposit amount, please try again. ");
         } else {
-            return numDepositeAmount;
+            return numDepositAmount;
         }
     }
 };
+
+const linesToBet = () => {
+    while (true) {
+        const betLines = prompt("How many lines would you like to bet on? ")
+    }
+}
 
 const depositAmount = deposit();

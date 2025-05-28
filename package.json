@@ -1,5 +1,5 @@
 {
-  "name": "js-basics",
+  "name": "cli-slots",
   "version": "1.0.0",
   "description": "",
   "main": "project.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisdguy/js-basics.git"
+    "url": "git+https://github.com/chrisdguy/cli-slots.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrisdguy/js-basics/issues"
+    "url": "https://github.com/chrisdguy/cli-slots/issues"
   },
-  "homepage": "https://github.com/chrisdguy/js-basics#readme",
+  "homepage": "https://github.com/chrisdguy/cli-slots#readme",
   "dependencies": {
     "prompt-sync": "^4.2.0"
   }
