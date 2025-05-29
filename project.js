@@ -1,10 +1,3 @@
-// TODO
-// Check Win
-
-// Update Player Balance
-
-// Play again/Out of Money
-
 const prompt = require("prompt-sync")();
 
 const ROWS = 3;
@@ -94,7 +87,7 @@ const transpose = (matrix) => {
   return transposed;
 };
 
-const checkWin = (lines) => {
+const checkWin = (lines, linesToBet) => {
   const linesWon = [];
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].every((val) => val === lines[i][0])) {
@@ -130,21 +123,20 @@ const printRows = (rows) => {
 const main = () => {
   let balance = deposit();
   while (true) {
-    console.log(balance)
     const linesToBet = getLinesToBet();
     const betAmount = getBetAmount(balance, linesToBet);
     const reels = spin();
     const lines = transpose(reels);
-    const wins = checkWin(lines);
+    const wins = checkWin(lines, linesToBet);
     balance = updateBalance(balance, betAmount, linesToBet, wins);
-    printRows(reels);
+    printRows(lines);
     console.log(`Balance: $${balance}`);
-    if (balance = 0) {
+    if (balance === 0) {
         console.log("You are out of money.")
         break;
     }
     const again = prompt("Spin Again? (y/n) ");
-    if (again.lower == "n"){
+    if (again.toLowerCase() === "n") {
         console.log("Thanks for playing!");
         break;
     }
@@ -152,5 +144,3 @@ const main = () => {
 };
 
 main();
-
-//tests
